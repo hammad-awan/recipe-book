@@ -5,7 +5,7 @@ import { Recipe } from "../recipes/recipe.model";
 
 @Injectable()
 export class ShoppingListService {
-  ingredientsChanged = new EventEmitter<Ingredient[]>;
+  ingredientsChanged = new EventEmitter<Ingredient[]>();
 
   private ingredients: Ingredient[] = [new Ingredient("Apples", 5), new Ingredient("Tomatoes", 10)];
 
