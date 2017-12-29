@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-header",
@@ -6,18 +6,7 @@ import { Component, OnInit, Output, EventEmitter } from "@angular/core";
   styleUrls: ["./header.component.css"]
 })
 export class HeaderComponent implements OnInit {
-  @Output('onRecipesSelected') recipesSelected: EventEmitter<any> = new EventEmitter<any>();
-  @Output('onShoppingListSelected') shoppingListSelected: EventEmitter<any> = new EventEmitter<any>();
-
   constructor() {}
 
   ngOnInit() {}
-
-  onRecipesClicked() {
-    this.recipesSelected.emit();
-  }
-
-  onShoppingListClicked() {
-    this.shoppingListSelected.emit();
-  }
 }
