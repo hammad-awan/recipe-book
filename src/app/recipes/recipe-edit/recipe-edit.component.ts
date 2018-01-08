@@ -88,7 +88,7 @@ export class RecipeEditComponent implements OnInit {
     formArray.removeAt(index);
   }
 
-  private getIngredientsControl() : FormArray{
+  private getIngredientsControl(): FormArray {
     return this.theForm.get("ingredients") as FormArray;
   }
 
