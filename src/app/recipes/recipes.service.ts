@@ -2,9 +2,13 @@ import { Injectable } from "@angular/core";
 
 import { Recipe } from "./recipe.model";
 import { Ingredient } from "../shared/ingredient.model";
+import { Http } from "@angular/http";
+import "rxjs/Rx";
 
 @Injectable()
 export class RecipesService {
+  constructor() {}
+
   private recipes: Recipe[] = [
     new Recipe(
       "A Test Recipe",
@@ -20,12 +24,16 @@ export class RecipesService {
     )
   ];
 
-  getRecipes() {
+  getRecipes(): Recipe[] {
     return this.recipes.slice();
   }
 
   getRecipe(id: number): Recipe {
     return this.recipes[id];
+  }
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
   }
 
   getRecipeId(recipe: Recipe): number {
