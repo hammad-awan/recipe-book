@@ -8,6 +8,7 @@ import { SelectRecipeComponent } from "./recipes/select-recipe/select-recipe.com
 import { RecipeEditComponent } from "./recipes/recipe-edit/recipe-edit.component";
 import { SignupComponent } from "./auth/signup/signup.component";
 import { SigninComponent } from "./auth/signin/signin.component";
+import { AuthGuardService } from "./auth/auth-guard.service";
 
 const routes: Routes = [
   { path: "", redirectTo: "/recipes", pathMatch: "full" },
@@ -16,9 +17,9 @@ const routes: Routes = [
     component: RecipesComponent,
     children: [
       { path: "", component: SelectRecipeComponent },
-      { path: "new", component: RecipeEditComponent },
+      { path: "new", component: RecipeEditComponent, canActivate: [AuthGuardService]},
       { path: ":id", component: RecipeDetailComponent },
-      { path: ":id/edit", component: RecipeEditComponent }
+      { path: ":id/edit", component: RecipeEditComponent, canActivate: [AuthGuardService] }
     ]
   },
   { path: "shopping-list", component: ShoppingListComponent },
