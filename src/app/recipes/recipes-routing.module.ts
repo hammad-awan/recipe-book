@@ -1,9 +1,12 @@
 import { NgModule } from "@angular/core";
+import { AuthModule } from "../auth/auth.module";
 import { Routes, RouterModule } from "@angular/router";
+
 import { RecipesComponent } from "./recipes.component";
 import { SelectRecipeComponent } from "./select-recipe/select-recipe.component";
 import { RecipeEditComponent } from "./recipe-edit/recipe-edit.component";
 import { RecipeDetailComponent } from "./recipe-detail/recipe-detail.component";
+
 import { AuthGuardService } from "../auth/auth-guard.service";
 
 const routes: Routes = [
